@@ -30,7 +30,7 @@ int main()
     if (maxIndex > minIndex)
         time = maxIndex + (n - 1 - minIndex) - 1;
     else
-        time = maxIndex + (n - 1 - minIndex);
+        time = maxIndex + minIndex - 1;
     printf("%d", time);    
 
    return 0;
