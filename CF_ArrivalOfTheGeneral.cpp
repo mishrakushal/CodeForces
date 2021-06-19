@@ -18,16 +18,20 @@ int main()
             maxIndex = i;
             max = a[i];
         }
-        else if (a[i] < min)
+        
+        if (a[i] <= min)
         {
             minIndex = i;
             min = a[i];
         }
     }
 
-    
+    int time;
+    if (maxIndex > minIndex)
+        time = maxIndex + (n - 1 - minIndex) - 1;
+    else
+        time = maxIndex + (n - 1 - minIndex);
+    printf("%d", time);    
 
-    
-
-    return 0;
+   return 0;
 }
