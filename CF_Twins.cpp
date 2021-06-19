@@ -23,9 +23,10 @@ int main()
         {
             twin += a[i];
             sum -= a[i];
-            count++;
+            ++count;
         }
 
+        // print count if twin is greater
         if (twin > sum)
         {
             printf("%d", count);
