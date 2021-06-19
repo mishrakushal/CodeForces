@@ -13,7 +13,7 @@ int main()
         scanf("%d", &a[i]);
         sum += a[i];
     }
-
+    // sort coin values
     sort (a, a + n);
 
     int twin = 0, count = 0;
