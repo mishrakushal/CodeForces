@@ -11,7 +11,7 @@ int main()
     if (n % 2 == 0)
         cout << "4 " << n - 4 << endl;
     else
-        cout << "9 " << n - 9 << endl;
+        cout << n - 9 << " 9" << endl;
 
     return 0;
 }
