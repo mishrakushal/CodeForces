@@ -1,21 +1,27 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int main()
-{
-    int n;
-    cin>>n;
+int main () {
+	int n;
+	cin >> n;
 
-    int a[110];
-    int x[n + 10];
-    for (int i = 0; i < n; ++i)
-        cin >> x[i];
-    
-    for (int i = 0; i < n; ++i)
-        a[x[i]] = i + 1;
+	vector <int> v;
+	// auto itr = v.begin();
+	for (int i = 0; i < n; ++i) {
+		int e;
+		cin >> e;
+		v.push_back(e);
+	}
 
-    for (int i = 1; i <= n; ++i)
-        cout << a[i] << " ";
+	vector <int> res (n, 0);
+	for (int i = 0; i < n; ++i) {
+		res[v.at(i)] = i;
+	}
+
+	for (int i = 1; i <= n; ++i) {
+		cout << res[i] + 1 << " ";
+	}
 
     return 0;
 }
