@@ -10,10 +10,14 @@ int main () {
 		cin >> n;
 
 		int arr[n];
-		for (int i = 0; i < n; ++i) cin >> arr[i];
+		int minimum = INT_MAX, maximum = INT_MIN;
+		for (int i = 0; i < n; ++i) {
+			cin >> arr[i];
+			if (arr[i] > maximum) maximum = arr[i];
+			if (arr[i] < minimum) minimum = arr[i];
+		}
 
-		sort (arr, arr + n);
-		cout << arr[n - 1] - arr[0] << "\n";
+		cout << maximum - minimum << "\n";
 	}
 
 	return 0;
