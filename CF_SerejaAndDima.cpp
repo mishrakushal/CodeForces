@@ -1,25 +1,39 @@
-#include <iostream>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int main() {
     int n;
-    scanf("%d", &n);
-
-    int arr[n];
-    for (int i = 0; i < n; ++i)
-        cin >> arr[i];
-    
-    sort (arr, arr + n);
+    cin >> n;
 
     int sereja = 0, dima = 0;
-    for (int i = n - 1; i >= 0; i -= 2)
-        sereja += arr[i];
-    for (int i = n - 2; i >= 0; i -= 2)
-        dima += arr[i];
+    deque <int> cards;
 
-    printf("%d %d\n", sereja, dima);
-
+    for (int i = 0; i < n; ++i) {
+        int element;
+        cin >> element;
+        cards.push_back(element);
+    }
+    int i = 0;
+    while (n--) {
+        if (i % 2 == 0) {
+            if (cards.front() > cards.back()) {
+                sereja += cards.front();
+                cards.pop_front();
+            } else {
+                sereja += cards.back();
+                cards.pop_back();
+            }
+        } else {
+            if (cards.front() > cards.back()) {
+                dima += cards.front();
+                cards.pop_front();
+            } else {
+                dima += cards.back();
+                cards.pop_back();
+            }
+        }
+        i++;
+    }
+    cout << sereja << " " << dima << "\n";
     return 0;
 }
